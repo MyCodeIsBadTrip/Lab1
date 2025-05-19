@@ -1,6 +1,6 @@
 CC = g++
 CFLAGS = -Wall -Wextra -std=c++11
-TARGET = prime_checker
+TARGET = count_checker
 
 all: $(TARGET)
 
