@@ -1,6 +1,6 @@
 CC = g++
 CFLAGS = -Wall -Wextra -std=c++11
-TARGET = count_checker
+TARGET = main
 
 all: $(TARGET)
 
