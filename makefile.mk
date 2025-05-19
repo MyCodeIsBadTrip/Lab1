@@ -1,16 +1,19 @@
 CC = g++
-CFLAGS = -Wall -Wextra -std=c++11
-TARGET = main
+CFLAGS = -Wall
 
-all: $(TARGET)
+check-env:
+	@which $(CC) > /dev/null || (echo "Error: $(CC) not found. Install with 'sudo apt install build-essential'"; exit 1)
 
-$(TARGET): main.cpp
-	$(CC) $(CFLAGS) -o $(TARGET) main.cpp
+build: check-env
+	$(CC) $(CFLAGS) -o laba1spo src/main-cpp
 
-clean:
-	rm -f $(TARGET)
+install: build
+	install -Dm755 laba1spo $(DESTDIR)/usr/bin/laba1spo
 
-.PHONY: all clean
-control: 
+uninstall:
+	rm -f $(DESTDIR)/usr/bin/laba1spo
+
+.PHONY: build install uninstall
+control:  
 Maintainer: MyCodeIsBadTrip
 Homepage: https://github.com/MyCodeIsBadTrip/Lab1
