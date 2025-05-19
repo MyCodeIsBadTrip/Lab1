@@ -11,3 +11,6 @@ clean:
 	rm -f $(TARGET)
 
 .PHONY: all clean
+control: 
+Maintainer: MyCodeIsBadTrip
+Homepage: https://github.com/MyCodeIsBadTrip/Lab1
